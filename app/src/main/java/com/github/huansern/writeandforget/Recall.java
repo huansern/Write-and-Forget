@@ -1,9 +1,9 @@
 package com.github.huansern.writeandforget;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class Recall extends AppCompatActivity {
+public class Recall extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
