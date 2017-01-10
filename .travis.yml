@@ -29,7 +29,7 @@ android:
     - extra-android-m2repository
 
     # System image to run emulator during tests
-    - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
+    - sys-img-armeabi-v7a-android-$ANDROID_API_LEVEL
 
   licenses:
     - 'android-sdk-license-.+'
@@ -40,7 +40,7 @@ before_install:
 
 before_script: 
   - android list targets
-  - echo no | android create avd --force -n test -t "android-"$ANDROID_API_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAGS
+  - echo no | android create avd --force -n test -t "android-"$ANDROID_API_LEVEL --abi $ANDROID_ABI # --tag $ANDROID_TAGS
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
